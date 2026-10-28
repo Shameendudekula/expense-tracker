@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard · Expense Tracker</title>
+    <meta name="description" content="Track your income and expenses, see where your money goes and export monthly reports.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='white' text-anchor='middle'>E</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar" id="topbar"></header>
+
+    <main class="container">
+      <div class="page-header">
+        <h1>Dashboard</h1>
+        <div class="toolbar">
+          <label for="month" class="sr-only">Month</label>
+          <input type="month" id="month">
+          <button type="button" class="btn btn-primary" id="add-btn"><span aria-hidden="true">＋</span> Add transaction</button>
+        </div>
+      </div>
+
+      <section class="stats" aria-label="Month summary" id="stats">
+        <div class="stat-card"><span class="stat-label">Income</span><span class="stat-value">–</span><span class="stat-sub">&nbsp;</span></div>
+        <div class="stat-card"><span class="stat-label">Expenses</span><span class="stat-value">–</span><span class="stat-sub">&nbsp;</span></div>
+        <div class="stat-card stat-balance"><span class="stat-label">Balance</span><span class="stat-value">–</span><span class="stat-sub">&nbsp;</span></div>
+      </section>
+
+      <div class="grid-2">
+        <section class="panel" aria-labelledby="doughnut-title">
+          <div class="panel-header"><h2 id="doughnut-title">Expenses by category</h2></div>
+          <div id="doughnut-area">
+            <div class="doughnut-wrap">
+              <div class="chart-box"><canvas id="doughnut" role="img" aria-label="Doughnut chart of expenses by category"></canvas></div>
+              <ul class="legend" id="doughnut-legend"></ul>
+            </div>
+          </div>
+          <div id="doughnut-state" hidden></div>
+        </section>
+
+        <section class="panel" aria-labelledby="trend-title">
+          <div class="panel-header"><h2 id="trend-title">Income vs expenses, last 6 months</h2></div>
+          <ul class="legend legend-inline" aria-hidden="true">
+            <li><span class="swatch swatch-income"></span><span>Income</span></li>
+            <li><span class="swatch swatch-expense"></span><span>Expenses</span></li>
+          </ul>
+          <div class="chart-box"><canvas id="trend" role="img" aria-label="Bar chart of income and expenses for the last 6 months"></canvas></div>
+        </section>
+      </div>
+
+      <section class="panel" aria-labelledby="recent-title">
+        <div class="panel-header">
+          <h2 id="recent-title">Recent transactions</h2>
+          <a href="/transactions" class="btn btn-ghost btn-sm">View all →</a>
+        </div>
+        <div id="recent"></div>
+      </section>
+    </main>
+
+    <footer class="container footer muted">Expense Tracker · Node.js, Express &amp; MongoDB</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/tx-modal.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

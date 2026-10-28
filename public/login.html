@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in · Expense Tracker</title>
+    <meta name="description" content="Track your income and expenses, see where your money goes and export monthly reports.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='white' text-anchor='middle'>E</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <main class="auth-page">
+      <div class="auth-card">
+        <div class="brand">
+          <span class="brand-logo" aria-hidden="true">₹</span>
+          <div>
+            <h1 class="brand-name">Expense Tracker</h1>
+            <p class="muted brand-tagline">See where your money goes</p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Log in or create account">
+          <button type="button" class="tab" role="tab" id="tab-login" aria-controls="login-form" aria-selected="true">Log in</button>
+          <button type="button" class="tab" role="tab" id="tab-register" aria-controls="register-form" aria-selected="false">Create account</button>
+        </div>
+
+        <p id="notice" class="muted" role="status" hidden></p>
+
+        <form id="login-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+          <div class="field">
+            <label for="login-email">Email</label>
+            <input id="login-email" name="email" type="email" autocomplete="email" required>
+            <small class="field-error" data-error-for="email"></small>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+            <small class="field-error" data-error-for="password"></small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Log in</button>
+          <div class="demo-hint">
+            Just looking? Use the demo account <strong>demo@example.com</strong> / <strong>demo1234</strong> –
+            <button type="button" id="use-demo">fill it in</button>
+          </div>
+        </form>
+
+        <form id="register-form" role="tabpanel" aria-labelledby="tab-register" novalidate hidden>
+          <div class="field">
+            <label for="reg-name">Name</label>
+            <input id="reg-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60">
+            <small class="field-error" data-error-for="name"></small>
+          </div>
+          <div class="field">
+            <label for="reg-email">Email</label>
+            <input id="reg-email" name="email" type="email" autocomplete="email" required>
+            <small class="field-error" data-error-for="email"></small>
+          </div>
+          <div class="field">
+            <label for="reg-password">Password</label>
+            <input id="reg-password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="72">
+            <small class="field-error" data-error-for="password">At least 8 characters</small>
+          </div>
+          <div class="field">
+            <label for="reg-currency">Currency</label>
+            <select id="reg-currency" name="currency">
+              <option value="INR">INR – Indian rupee (₹)</option>
+              <option value="SEK">SEK – Swedish krona (kr)</option>
+              <option value="USD">USD – US dollar ($)</option>
+            </select>
+            <small class="field-error" data-error-for="currency"></small>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create account</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>
