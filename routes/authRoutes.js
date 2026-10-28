@@ -5,10 +5,12 @@ const requireAuth = require('../middleware/auth');
 
 const router = express.Router();
 
-// Slow down password guessing: at most 20 login/register attempts per IP every 15 minutes
+// Slow down password guessing: at most 20 FAILED login/register attempts per IP every 15 minutes.
+// Successful requests aren't counted, so normal users logging in and out never hit the limit.
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   limit: 20,
+  skipSuccessfulRequests: true,
   standardHeaders: 'draft-8',
   legacyHeaders: false,
   message: { message: 'Too many attempts, please try again in a few minutes' },

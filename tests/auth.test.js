@@ -85,3 +85,20 @@ test('PATCH /me updates the currency and validates it', async () => {
   assert.equal(res.body.user.currency, 'USD');
   await request(app).patch('/api/auth/me').set('Authorization', auth).send({ currency: 'EUR' }).expect(400);
 });
+
+test('rate limiter blocks after 20 failed logins but never counts successful ones', async () => {
+  await registerUser();
+  process.env.NODE_ENV = 'development'; // the limiter is switched off in tests; turn it on here
+  try {
+    for (let i = 0; i < 25; i++) {
+      await request(app).post('/api/auth/login').send({ email: 'test@example.com', password: 'secret123' }).expect(200);
+    }
+    for (let i = 0; i < 20; i++) {
+      await request(app).post('/api/auth/login').send({ email: 'test@example.com', password: 'wrong-guess' }).expect(401);
+    }
+    const blocked = await request(app).post('/api/auth/login').send({ email: 'test@example.com', password: 'wrong-guess' }).expect(429);
+    assert.match(blocked.body.message, /Too many attempts/);
+  } finally {
+    process.env.NODE_ENV = 'test';
+  }
+});
