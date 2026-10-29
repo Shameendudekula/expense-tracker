@@ -2,7 +2,7 @@
 
 A full-stack web application for tracking income and expenses. Users create an account, record transactions, see where their money goes on a dashboard with charts, and export monthly reports. Built with **Node.js, Express, MongoDB (Mongoose)**, **JWT authentication** and a **plain HTML/CSS/JavaScript** frontend with **Chart.js**.
 
-🔗 **Live demo:** _coming soon (Render)_
+🔗 **Live demo:** https://expense-tracker-e0ck.onrender.com (free Render instance – the first request after inactivity can take ~50 seconds)
 💻 **Source:** https://github.com/Shameendudekula/expense-tracker
 
 ### Demo login
