@@ -287,16 +287,13 @@ The UI was tested end-to-end in Chrome at 1280px and 375px: register, login, log
 
 ## 📸 Screenshots
 
-> _Screenshots coming soon._
+Screenshots from the live site (desktop 1280px, mobile 375px).
 
-| View | Screenshot |
-|------|-----------|
-| Login / register | `![Login](screenshots/login.png)` |
-| Dashboard | `![Dashboard](screenshots/dashboard.png)` |
-| Transactions | `![Transactions](screenshots/transactions.png)` |
-| Add / edit transaction | `![Form](screenshots/form.png)` |
-| Reports | `![Reports](screenshots/reports.png)` |
-| Mobile | `![Mobile](screenshots/mobile.png)` |
+<table>
+<tr><td align="center" valign="top"><b>Login / register</b><br><img src="screenshots/login.png" alt="Login / register" width="100%"></td><td align="center" valign="top"><b>Dashboard</b><br><img src="screenshots/dashboard.png" alt="Dashboard" width="100%"></td></tr>
+<tr><td align="center" valign="top"><b>Transactions</b><br><img src="screenshots/transactions.png" alt="Transactions" width="100%"></td><td align="center" valign="top"><b>Add / edit transaction</b><br><img src="screenshots/form.png" alt="Add / edit transaction" width="100%"></td></tr>
+<tr><td align="center" valign="top"><b>Reports</b><br><img src="screenshots/reports.png" alt="Reports" width="100%"></td><td align="center" valign="top"><b>Mobile</b><br><img src="screenshots/mobile.png" alt="Mobile" width="260"></td></tr>
+</table>
 
 ---
 
