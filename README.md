@@ -287,12 +287,12 @@ The UI was tested end-to-end in Chrome at 1280px and 375px: register, login, log
 
 ## 📸 Screenshots
 
-Screenshots from the live site (desktop 1280px, mobile 375px).
+Screenshots taken from the live site (desktop 1280px, mobile 375px).
 
 <table>
-<tr><td align="center" valign="top"><b>Login / register</b><br><img src="screenshots/login.png" alt="Login / register" width="100%"></td><td align="center" valign="top"><b>Dashboard</b><br><img src="screenshots/dashboard.png" alt="Dashboard" width="100%"></td></tr>
-<tr><td align="center" valign="top"><b>Transactions</b><br><img src="screenshots/transactions.png" alt="Transactions" width="100%"></td><td align="center" valign="top"><b>Add / edit transaction</b><br><img src="screenshots/form.png" alt="Add / edit transaction" width="100%"></td></tr>
-<tr><td align="center" valign="top"><b>Reports</b><br><img src="screenshots/reports.png" alt="Reports" width="100%"></td><td align="center" valign="top"><b>Mobile</b><br><img src="screenshots/mobile.png" alt="Mobile" width="260"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Login</b><br><img src="screenshots/login.png" alt="Login" width="100%"></td><td align="center" valign="top" width="50%"><b>Dashboard with charts</b><br><img src="screenshots/dashboard.png" alt="Dashboard with charts" width="100%"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Transactions with filters</b><br><img src="screenshots/transactions.png" alt="Transactions with filters" width="100%"></td><td align="center" valign="top" width="50%"><b>Add / edit transaction</b><br><img src="screenshots/form.png" alt="Add / edit transaction" width="100%"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Reports</b><br><img src="screenshots/reports.png" alt="Reports" width="100%"></td><td align="center" valign="top" width="50%"><b>Mobile (375px)</b><br><img src="screenshots/mobile.png" alt="Mobile (375px)" width="260"></td></tr>
 </table>
 
 ---
